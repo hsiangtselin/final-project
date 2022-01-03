@@ -52,11 +52,6 @@ if reserve_or_not == 'no':
     if not reserve_time:
         st.stop()
     reserve_time = reserve_time.split(',')
-    for i in range(len(reserve_time)):
-        if not reserve_time[i].isdigit():
-            e = RuntimeError('請輸入正確的日期格式')
-            st.exception(e)
-            st.stop()
     yr = int(reserve_time[0])
     mon = int(reserve_time[1])
     day = int(reserve_time[2])
