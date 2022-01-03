@@ -13,10 +13,21 @@ import datetime
 import time
 from datetime import date
 import calendar
-current_date = date.today()
+from dateutil import tz
+from datetime import datetime
+# UTC Zone
+from_zone = tz.gettz('UTC')
+# Taiwan Zone
+to_zone = tz.gettz('Asia/Shanghai')
+utc = datetime.utcnow()
+# Tell the datetime object that it's in UTC time zone
+utc = utc.replace(tzinfo=from_zone)
+# Convert time zone
+local = utc.astimezone(to_zone)
+# Save information of current time and current weekday
+current_time = datetime.strftime(local, "%H:%M")
+current_date = local.today()
 current_weekday = calendar.day_name[current_date.weekday()]
-localtime = time.localtime()
-current_time = time.strftime("%H:%M", localtime)
 time_result = current_time + ', ' + current_weekday
 
 # 輸入名字
