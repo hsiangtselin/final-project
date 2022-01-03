@@ -52,13 +52,13 @@ if reserve_or_not == 'no':
     if not reserve_time:
         st.stop()
     reserve_time = reserve_time.split(',')
-    yr = int(reserve_time[0])
-    mon = int(reserve_time[1])
-    day = int(reserve_time[2])
-    hr = int(reserve_time[3])
-    mn = int(reserve_time[4])
+    yr = str(reserve_time[0])
+    mon = str(reserve_time[1])
+    day = str(reserve_time[2])
+    hr = str(reserve_time[3])
+    mn = str(reserve_time[4])
     # 轉換成時間格式
-    dt = datetime.datetime(yr, mon, day, hr, mn)
+    dt = datetime.strptime(yr + ':' + mon + ':' + day + ':' + hr + ':' + mn, '%Y:%m:%d:%H:%M')
     target_time = dt.strftime('%H:%M')
     target_weekday = calendar.day_name[dt.weekday()]
 elif reserve_or_not == 'yes':
