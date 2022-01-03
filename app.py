@@ -26,8 +26,8 @@ utc = utc.replace(tzinfo=from_zone)
 local = utc.astimezone(to_zone)
 # Save information of current time and current weekday
 current_time = datetime.strftime(local, "%H:%M")
-current_date = local.today()
-current_weekday = calendar.day_name[current_date.weekday()]
+# current_date = local.today()
+current_weekday = calendar.day_name[local.weekday()]
 time_result = current_time + ', ' + current_weekday
 
 # 輸入名字
