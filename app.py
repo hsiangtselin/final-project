@@ -75,13 +75,13 @@ region = st.text_input('')
 if not region:
     st.stop()
 if region == 'a':
-    file_location = '/Users/dustinlin/Desktop/Final Project/data/gonguan.csv'
+    file_location = 'data/gonguan.csv'
 elif region == 'b':
-    file_location = '/Users/dustinlin/Desktop/Final Project/data/118.csv'
+    file_location = 'data/118.csv'
 elif region == 'c':
-    file_location = '/Users/dustinlin/Desktop/Final Project/data/wenchou.csv'
+    file_location = 'data/wenchou.csv'
 elif region == 'd':
-    file_location = '/Users/dustinlin/Desktop/Final Project/data/ntu.csv'
+    file_location = 'data/ntu.csv'
 else:
     e = RuntimeError('請重新輸入')
     st.exception(e)
